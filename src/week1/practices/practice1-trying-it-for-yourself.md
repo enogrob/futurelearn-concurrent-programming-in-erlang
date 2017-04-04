@@ -24,22 +24,24 @@ pal_check(String) -> String==lists:reverse(String).
 
 but we can make it more sophisticated by removing punctuation, and transforming capital letters into small letters first, using:
 ```
-rem_punct(String) -> lists:filter(fun (Ch) ->
-                                      not(lists:member(Ch,"\"\'\t\n "))
-                                    end,
-                                    String).
+rem_punct(String) -> lists:filter(
+                      fun (Ch) ->
+                        not(lists:member(Ch,"\"\'\t\n "))
+                      end,
+                      String).
 
-to_small(String) -> lists:map(fun(Ch) ->
-                                  case ($A =< Ch andalso Ch =< $Z) of
-                                      true -> Ch+32;
-                                      false -> Ch
-                                   end
-                                 end,
-                                 String).
+to_small(String) -> lists:map(
+                    fun(Ch) ->
+                      case ($A =< Ch andalso Ch =< $Z) of
+                        true -> Ch+32;
+                        false -> Ch
+                      end
+                    end,
+                    String).
 
 palindrome_check(String) ->
-    Normalise = to_small(rem_punct(String)),
-    lists:reverse(Normalise) == Normalise.
+  Normalise = to_small(rem_punct(String)),
+  lists:reverse(Normalise) == Normalise.
 ```
 
 **A palindrome checking server**
