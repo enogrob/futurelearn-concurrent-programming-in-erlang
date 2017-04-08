@@ -47,6 +47,6 @@ In this activity we introduce a larger scale example, the *frequency server*, as
 Pulling it all together
 In this week's final activity, we 'pull it all together' with a further two presentations from Joe Armstrong, and some concluding comments from Simon.
 [x] 1.19 ABSTRACTING PATTERNS OF CONCURRENCY VIDEO (06:26)
-[ ] 1.20 CLIENT-SERVER VIDEO (07:14)
-[ ] 1.21 WEEK 1 SUMMARY ARTICLE
+[x] 1.20 CLIENT-SERVER VIDEO (07:14)
+[x] 1.21 WEEK 1 SUMMARY ARTICLE
 ```
