@@ -15,7 +15,7 @@ end
 
 (To be pedantic, we should make sure that X is not already bound: that is, it doesn’t already have a value, and is not a parameter of a function. Remember that Erlang allows pattern matching against bound variables: in this case the pattern match is successful only if the incoming value is equal to the value of X.)
 
-Design a simple test bed to show how messages are processed in mailbox order. The simplest way to do this is to define a receiver/0 function, which repeatedly receives messages and prints them out. You can do this by making the action on receive a call to `io:format/2`, for example:
+Design a simple test bed to show how messages are processed in mailbox order. The simplest way to do this is to define a `receiver/0` function, which repeatedly receives messages and prints them out. You can do this by making the action on receive a call to `io:format/2`, for example:
 ```
 io:format("message:~w~n",[{ok,42}])
 ````

@@ -1,9 +1,29 @@
 -module(palin).
--export([palin/1,nopunct/1,palindrome/1, server/1, pal_check/1]).
+-compile([export_all]).
 
 % palindrome problem
 %
 % palindrome("Madam I\'m Adam.") = true
+
+start() ->
+  register(palin,spawn(?MODULE, multi_client, [])).
+
+multi_client() ->
+  receive
+    stop ->
+      io:format("The server has been stopped~n");
+
+    {From, check, X} ->
+      Result = palindrome_check(X),
+      if
+        Result == true ->
+          From ! {Result, X ++ " is palindrome"};
+        true  ->
+          From ! {Result, X ++ " is not palindrome"}
+      end,
+      multi_client()
+  end.
+
 
 rem_punct(String) -> lists:filter(
                       fun (Ch) ->
@@ -80,16 +100,3 @@ server(Pid) ->
       end,
       server(Pid)
   end.
-%   receive
-%     {check, X} ->
-%       Result = pal_check(X);
-%       server(Pid);
-%       % if
-%       %   Result == true ->
-%       %     Pid ! {result, X ++ " is a palindrome"};
-%       %   true ->
-%       %     Pid ! {result, X ++ " is not a palindrome"}
-%       % end;
-%     {stop, _} ->
-%           io:format("palin stopped ~w~n",[Pid]);
-%   end.

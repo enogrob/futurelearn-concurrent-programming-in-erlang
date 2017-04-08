@@ -1,13 +1,5 @@
-%% Based on code from 
-%%   Erlang Programming
-%%   Francecso Cesarini and Simon Thompson
-%%   O'Reilly, 2008
-%%   http://oreilly.com/catalog/9780596518189/
-%%   http://www.erlangprogramming.org/
-%%   (c) Francesco Cesarini and Simon Thompson
-
 -module(frequency).
--export([start/0,allocate/0,deallocate/1,stop/0]).
+-export([start/0,allocate/0,deallocate/1,stop/0,test_overload/0,test_overload_and_clear/0]).
 -export([init/0]).
 
 %% These are the start functions used to create and
@@ -25,8 +17,8 @@ init() ->
 get_frequencies() -> [10,11,12,13,14,15].
 
 %% The Main Loop
-
 loop(Frequencies) ->
+  timer:sleep(1500),
   receive
     {request, Pid, allocate} ->
       {NewFrequencies, Reply} = allocate(Frequencies, Pid),
@@ -42,24 +34,38 @@ loop(Frequencies) ->
 
 %% Functional interface
 
-allocate() -> 
+allocate() ->
     frequency ! {request, self(), allocate},
-    receive 
+    receive
 	    {reply, Reply} -> Reply
+    after 1000 ->
+      io:format("the server is overloaded, request  failed~n")
     end.
 
-deallocate(Freq) -> 
+deallocate(Freq) ->
     frequency ! {request, self(), {deallocate, Freq}},
-    receive 
+    receive
 	    {reply, Reply} -> Reply
+    after 1000 ->
+      io:format("the server is overloaded, request  failed~n")
     end.
 
-stop() -> 
+clear() ->
+  receive
+    _Msg ->
+    io:format("~w ~n", [_Msg]),
+    clear()
+  after 0 ->
+    ok
+  end.
+
+stop() ->
     frequency ! {request, self(), stop},
-    receive 
-	    {reply, Reply} -> Reply
+    receive
+      {reply, Reply} -> Reply
+    after 1000 ->
+      io:format("the server is overloaded, request  failed~n")
     end.
-
 
 %% The Internal Help Functions used to allocate and
 %% deallocate frequencies.
@@ -72,3 +78,30 @@ allocate({[Freq|Free], Allocated}, Pid) ->
 deallocate({Free, Allocated}, Freq) ->
   NewAllocated=lists:keydelete(Freq, 1, Allocated),
   {[Freq|Free],  NewAllocated}.
+
+% Tests in order to simulate overload
+
+test_overload() ->
+  start(),
+  allocate(),
+  allocate(),
+  allocate(),
+  allocate(),
+  allocate(),
+  allocate(),
+  io:format("Wait (6 * 1500) = 6 seconds~n"),
+  % will show messages
+  timer:sleep(6000),
+  clear(),
+  frequency:stop().
+
+test_overload_and_clear() ->
+  start(),
+  allocate(),
+  timer:sleep(1500),
+  allocate(),
+  timer:sleep(1500),
+  allocate(),
+  timer:sleep(1500),
+  clear(),
+  frequency:stop().
