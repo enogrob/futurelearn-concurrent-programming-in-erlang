@@ -64,7 +64,7 @@ Designing for robustness
 In this activity we think about designing for robustness. We'll present a 'hardened' version of the frequency server introduced in the first week, as an application of process linking, and introduce the idea of supervisors.
 [x] 2.6 HARDENING THE FREQUENCY SERVER VIDEO (07:37)
 [~] 2.7 HARDENING THE FREQUENCY SERVER - TRYING IT FOR YOURSELF ARTICLE
-[ ] 2.8 HARDENING THE FREQUENCY SERVER - FEEDBACK DISCUSSION
+[x] 2.8 HARDENING THE FREQUENCY SERVER - FEEDBACK DISCUSSION
 [ ] 2.9 SUPERVISORS VIDEO (06:13)
 [ ] 2.10 SUPERVISION IN THE FREQUENCY SERVER ASSIGNMENT
 [ ] 2.11 SUPERVISION IN THE FREQUENCY SERVER: REVIEW REVIEW
