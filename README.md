@@ -74,9 +74,9 @@ In this activity we think about designing for robustness. We'll present a 'harde
 
 Dealing with exceptions
 In this activity we look at mechanisms to deal with exceptions - handling errors without failing - and apply this to our frequency server example.
-[ ] 2.15 EXCEPTIONS: 'THROW' AND 'CATCH' VIDEO (08:23)
-[ ] 2.16 EXCEPTIONS IN THE FREQUENCY SERVER ARTICLE
-[ ] 2.17 TRYING IT FOR YOURSELF DISCUSSION
+[x] 2.15 EXCEPTIONS: 'THROW' AND 'CATCH' VIDEO (08:23)
+[x] 2.16 EXCEPTIONS IN THE FREQUENCY SERVER ARTICLE
+[x] 2.17 TRYING IT FOR YOURSELF DISCUSSION
 
 Testing and fixing concurrency
 This activity considers the various errors that can arise with concurrency, and how we can upgrade running systems.
