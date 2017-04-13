@@ -63,14 +63,14 @@ In this activity we consider the life cycle of processes in Erlang, looking to u
 Designing for robustness
 In this activity we think about designing for robustness. We'll present a 'hardened' version of the frequency server introduced in the first week, as an application of process linking, and introduce the idea of supervisors.
 [x] 2.6 HARDENING THE FREQUENCY SERVER VIDEO (07:37)
-[~] 2.7 HARDENING THE FREQUENCY SERVER - TRYING IT FOR YOURSELF ARTICLE
+[x] 2.7 HARDENING THE FREQUENCY SERVER - TRYING IT FOR YOURSELF ARTICLE
 [x] 2.8 HARDENING THE FREQUENCY SERVER - FEEDBACK DISCUSSION
-[ ] 2.9 SUPERVISORS VIDEO (06:13)
-[ ] 2.10 SUPERVISION IN THE FREQUENCY SERVER ASSIGNMENT
-[ ] 2.11 SUPERVISION IN THE FREQUENCY SERVER: REVIEW REVIEW
+[x] 2.9 SUPERVISORS VIDEO (06:13)
+[x] 2.10 SUPERVISION IN THE FREQUENCY SERVER ASSIGNMENT
+[x] 2.11 SUPERVISION IN THE FREQUENCY SERVER: REVIEW REVIEW
 [ ] 2.12 SUPERVISION IN THE FREQUENCY SERVER: REFLECTION REFLECTION
-[ ] 2.13 TRYING SUPERVISION FOR YOURSELF DISCUSSION
-[ ] 2.14 CONCURRENCY AND ROBUSTNESS VIDEO (09:37)
+[x] 2.13 TRYING SUPERVISION FOR YOURSELF DISCUSSION
+[x] 2.14 CONCURRENCY AND ROBUSTNESS VIDEO (09:37)
 
 Dealing with exceptions
 In this activity we look at mechanisms to deal with exceptions - handling errors without failing - and apply this to our frequency server example.

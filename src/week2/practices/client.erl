@@ -3,8 +3,7 @@
 -export([init/0]).
 
 start() ->
-    register(client,
-        spawn(client, init, [])).
+    spawn(?MODULE, init, []).
 
 init() ->
     loop().

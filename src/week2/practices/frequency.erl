@@ -1,13 +1,5 @@
-%% Based on code from
-%%   Erlang Programming
-%%   Francecso Cesarini and Simon Thompson
-%%   O'Reilly, 2008
-%%   http://oreilly.com/catalog/9780596518189/
-%%   http://www.erlangprogramming.org/
-%%   (c) Francesco Cesarini and Simon Thompson
-
--module(frequency_hardened).
--export([start/0,allocate/0,deallocate/1,stop/0]).
+-module(frequency).
+-export([start/0,allocate/0,deallocate/1,stop/0,test_overload/0,test_overload_and_clear/0]).
 -export([init/0]).
 
 %% These are the start functions used to create and
@@ -15,10 +7,9 @@
 
 start() ->
     register(frequency,
-	     spawn(?MODULE, init, [])).
+	     spawn(frequency, init, [])).
 
 init() ->
-  process_flag(trap_exit, true),    %%% ADDED
   Frequencies = {get_frequencies(), []},
   loop(Frequencies).
 
@@ -26,8 +17,8 @@ init() ->
 get_frequencies() -> [10,11,12,13,14,15].
 
 %% The Main Loop
-
 loop(Frequencies) ->
+  timer:sleep(1500),
   receive
     {request, Pid, allocate} ->
       {NewFrequencies, Reply} = allocate(Frequencies, Pid),
@@ -38,10 +29,7 @@ loop(Frequencies) ->
       Pid ! {reply, ok},
       loop(NewFrequencies);
     {request, Pid, stop} ->
-      Pid ! {reply, stopped};
-    {'EXIT', Pid, _Reason} ->                   %%% CLAUSE ADDED
-      NewFrequencies = exited(Frequencies, Pid),
-      loop(NewFrequencies)
+      Pid ! {reply, stopped}
   end.
 
 %% Functional interface
@@ -50,20 +38,34 @@ allocate() ->
     frequency ! {request, self(), allocate},
     receive
 	    {reply, Reply} -> Reply
+    after 1000 ->
+      io:format("the server is overloaded, request  failed~n")
     end.
 
 deallocate(Freq) ->
     frequency ! {request, self(), {deallocate, Freq}},
     receive
 	    {reply, Reply} -> Reply
+    after 1000 ->
+      io:format("the server is overloaded, request  failed~n")
     end.
+
+clear() ->
+  receive
+    _Msg ->
+    io:format("~w ~n", [_Msg]),
+    clear()
+  after 0 ->
+    ok
+  end.
 
 stop() ->
     frequency ! {request, self(), stop},
     receive
-	    {reply, Reply} -> Reply
+      {reply, Reply} -> Reply
+    after 1000 ->
+      io:format("the server is overloaded, request  failed~n")
     end.
-
 
 %% The Internal Help Functions used to allocate and
 %% deallocate frequencies.
@@ -71,20 +73,35 @@ stop() ->
 allocate({[], Allocated}, _Pid) ->
   {{[], Allocated}, {error, no_frequency}};
 allocate({[Freq|Free], Allocated}, Pid) ->
-  link(Pid),                                               %%% ADDED
   {{Free, [{Freq, Pid}|Allocated]}, {ok, Freq}}.
 
 deallocate({Free, Allocated}, Freq) ->
-  {value,{Freq,Pid}} = lists:keysearch(Freq,1,Allocated),  %%% ADDED
-  unlink(Pid),                                             %%% ADDED
   NewAllocated=lists:keydelete(Freq, 1, Allocated),
   {[Freq|Free],  NewAllocated}.
 
-exited({Free, Allocated}, Pid) ->                %%% FUNCTION ADDED
-    case lists:keysearch(Pid,2,Allocated) of
-      {value,{Freq,Pid}} ->
-        NewAllocated = lists:keydelete(Freq,1,Allocated),
-        {[Freq|Free],NewAllocated};
-      false ->
-        {Free,Allocated}
-    end.
+% Tests in order to simulate overload
+
+test_overload() ->
+  start(),
+  allocate(),
+  allocate(),
+  allocate(),
+  allocate(),
+  allocate(),
+  allocate(),
+  io:format("Wait (6 * 1500) = 6 seconds~n"),
+  % will show messages
+  timer:sleep(6000),
+  clear(),
+  frequency:stop().
+
+test_overload_and_clear() ->
+  start(),
+  allocate(),
+  timer:sleep(1500),
+  allocate(),
+  timer:sleep(1500),
+  allocate(),
+  timer:sleep(1500),
+  clear(),
+  frequency:stop().

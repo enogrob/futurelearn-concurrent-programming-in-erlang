@@ -1,21 +1,11 @@
-%% Based on code from
-%%   Erlang Programming
-%%   Francecso Cesarini and Simon Thompson
-%%   O'Reilly, 2008
-%%   http://oreilly.com/catalog/9780596518189/
-%%   http://www.erlangprogramming.org/
-%%   (c) Francesco Cesarini and Simon Thompson
-
--module(frequency_hardened).
--export([start/0,allocate/0,deallocate/1,stop/0]).
--export([init/0]).
+-module(frequency).
+-compile([export_all]).
 
 %% These are the start functions used to create and
 %% initialize the server.
 
 start() ->
-    register(frequency,
-	     spawn(?MODULE, init, [])).
+  register(frequency, spawn(?MODULE, init, [])).
 
 init() ->
   process_flag(trap_exit, true),    %%% ADDED
