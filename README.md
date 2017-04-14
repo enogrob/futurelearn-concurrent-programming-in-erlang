@@ -75,15 +75,15 @@ In this activity we think about designing for robustness. We'll present a 'harde
 Dealing with exceptions
 In this activity we look at mechanisms to deal with exceptions - handling errors without failing - and apply this to our frequency server example.
 [x] 2.15 EXCEPTIONS: 'THROW' AND 'CATCH' VIDEO (08:23)
-[x] 2.16 EXCEPTIONS IN THE FREQUENCY SERVER ARTICLE
+[~] 2.16 EXCEPTIONS IN THE FREQUENCY SERVER ARTICLE
 [x] 2.17 TRYING IT FOR YOURSELF DISCUSSION
 
 Testing and fixing concurrency
 This activity considers the various errors that can arise with concurrency, and how we can upgrade running systems.
-[ ] 2.18 CONCURRENCY AND SCHEDULING VIDEO (06:25)
-[ ] 2.19 WHAT CAN GO WRONG? VIDEO (11:02)
-[ ] 2.20 CHECKING YOUR PROGRESS QUIZ
-[ ] 2.21 HOT CODE LOADING VIDEO (07:30)
-[ ] 2.22 UPGRADING THE FREQUENCY SERVER ARTICLE
-[ ] 2.23 MAKING CODE ROBUST VIDEO (06:37)
+[x] 2.18 CONCURRENCY AND SCHEDULING VIDEO (06:25)
+[x] 2.19 WHAT CAN GO WRONG? VIDEO (11:02)
+[x] 2.20 CHECKING YOUR PROGRESS QUIZ
+[x] 2.21 HOT CODE LOADING VIDEO (07:30)
+[~] 2.22 UPGRADING THE FREQUENCY SERVER ARTICLE
+[x] 2.23 MAKING CODE ROBUST VIDEO (06:37)
 ```
