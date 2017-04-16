@@ -86,4 +86,39 @@ This activity considers the various errors that can arise with concurrency, and 
 [x] 2.21 HOT CODE LOADING VIDEO (07:30)
 [~] 2.22 UPGRADING THE FREQUENCY SERVER ARTICLE
 [x] 2.23 MAKING CODE ROBUST VIDEO (06:37)
+
+WEEK 3: SCALING IT UP
+
+Multicore and distributed Erlang
+This activity looks at how multicore Erlang works, and the impact of this technology on scaling systems.
+[ ] 3.1 INTRODUCTION TO WEEK 3 VIDEO (02:18)
+[ ] 3.2 SCALING IT UP VIDEO (04:05)
+[ ] 3.3 MULTICORE ERLANG VIDEO (07:27)
+[ ] 3.4 SCALING THE FREQUENCY SERVER ARTICLE
+[ ] 3.5 DISTRIBUTED ERLANG VIDEO (09:30)
+[ ] 3.6 SCALING OUT THE FREQUENCY SERVER DISCUSSION
+[ ] 3.7 BULK STORAGE IN ERLANG VIDEO (06:24)
+
+OTP: The Open Telecom Platform
+In this activity we look at OTP - the Open Telecom Platform that powers most Erlang systems with its reusable generic components.
+[ ] 3.8 OTP OVERVIEW AND PRINCIPLES VIDEO (09:48)
+[ ] 3.9 THE ROAD TO GENERICS VIDEO (08:12)
+[ ] 3.10 OTP - 'GEN_SERVER' VIDEO (15:44)
+[ ] 3.11 THE FREQUENCY SERVER AS A GEN_SERVER ARTICLE
+[ ] 3.12 THE FREQUENCY SERVER AS A GEN_SERVER: FEEDBACK DISCUSSION
+
+OTP Master Class
+This activity continues our exploration of OTP, with selected parts of an online OTP Master Class presented by Francesco Cesarini, founder and Technical Director of Erlang Solutions.
+[ ] 3.13 CLIENT-SERVERS VIDEO (09:14)
+[ ] 3.14 WHY OTP? VIDEO (07:37)
+[ ] 3.15 SUPERVISORS VIDEO (05:35)
+
+What's next?
+We're now coming to the end of our course in concurrent programming in Erlang. What's next?
+[ ] 3.16 OTHER FEATURES OF ERLANG VIDEO (09:58)
+[ ] 3.17 THE ERLANG TOOL ECOSYSTEM VIDEO (06:24)
+[ ] 3.18 LOOKING BACK AT CONCURRENT ERLANG QUIZ
+[ ] 3.19 FRANCESCO, JOE AND SIMON: ERLANG/OTP NOW AND IN THE FUTURE VIDEO (10:30)
+[ ] 3.20 HOW WELL DO YOU KNOW CONCURRENT PROGRAMMING IN ERLANG? TEST
+[ ] 3.21 COMING TO THE END VIDEO (08:45)
 ```
