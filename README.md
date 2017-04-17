@@ -91,13 +91,13 @@ WEEK 3: SCALING IT UP
 
 Multicore and distributed Erlang
 This activity looks at how multicore Erlang works, and the impact of this technology on scaling systems.
-[ ] 3.1 INTRODUCTION TO WEEK 3 VIDEO (02:18)
-[ ] 3.2 SCALING IT UP VIDEO (04:05)
-[ ] 3.3 MULTICORE ERLANG VIDEO (07:27)
-[ ] 3.4 SCALING THE FREQUENCY SERVER ARTICLE
-[ ] 3.5 DISTRIBUTED ERLANG VIDEO (09:30)
-[ ] 3.6 SCALING OUT THE FREQUENCY SERVER DISCUSSION
-[ ] 3.7 BULK STORAGE IN ERLANG VIDEO (06:24)
+[x] 3.1 INTRODUCTION TO WEEK 3 VIDEO (02:18)
+[x] 3.2 SCALING IT UP VIDEO (04:05)
+[x] 3.3 MULTICORE ERLANG VIDEO (07:27)
+[~] 3.4 SCALING THE FREQUENCY SERVER ARTICLE
+[x] 3.5 DISTRIBUTED ERLANG VIDEO (09:30)
+[x] 3.6 SCALING OUT THE FREQUENCY SERVER DISCUSSION
+[x] 3.7 BULK STORAGE IN ERLANG VIDEO (06:24)
 
 OTP: The Open Telecom Platform
 In this activity we look at OTP - the Open Telecom Platform that powers most Erlang systems with its reusable generic components.
