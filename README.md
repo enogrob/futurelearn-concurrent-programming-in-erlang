@@ -101,11 +101,11 @@ This activity looks at how multicore Erlang works, and the impact of this techno
 
 OTP: The Open Telecom Platform
 In this activity we look at OTP - the Open Telecom Platform that powers most Erlang systems with its reusable generic components.
-[ ] 3.8 OTP OVERVIEW AND PRINCIPLES VIDEO (09:48)
-[ ] 3.9 THE ROAD TO GENERICS VIDEO (08:12)
-[ ] 3.10 OTP - 'GEN_SERVER' VIDEO (15:44)
-[ ] 3.11 THE FREQUENCY SERVER AS A GEN_SERVER ARTICLE
-[ ] 3.12 THE FREQUENCY SERVER AS A GEN_SERVER: FEEDBACK DISCUSSION
+[x] 3.8 OTP OVERVIEW AND PRINCIPLES VIDEO (09:48)
+[x] 3.9 THE ROAD TO GENERICS VIDEO (08:12)
+[x] 3.10 OTP - 'GEN_SERVER' VIDEO (15:44)
+[~] 3.11 THE FREQUENCY SERVER AS A GEN_SERVER ARTICLE
+[x] 3.12 THE FREQUENCY SERVER AS A GEN_SERVER: FEEDBACK DISCUSSION
 
 OTP Master Class
 This activity continues our exploration of OTP, with selected parts of an online OTP Master Class presented by Francesco Cesarini, founder and Technical Director of Erlang Solutions.
