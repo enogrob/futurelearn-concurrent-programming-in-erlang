@@ -68,7 +68,7 @@ In this activity we think about designing for robustness. We'll present a 'harde
 [x] 2.9 SUPERVISORS VIDEO (06:13)
 [x] 2.10 SUPERVISION IN THE FREQUENCY SERVER ASSIGNMENT
 [x] 2.11 SUPERVISION IN THE FREQUENCY SERVER: REVIEW REVIEW
-[ ] 2.12 SUPERVISION IN THE FREQUENCY SERVER: REFLECTION REFLECTION
+[x] 2.12 SUPERVISION IN THE FREQUENCY SERVER: REFLECTION REFLECTION
 [x] 2.13 TRYING SUPERVISION FOR YOURSELF DISCUSSION
 [x] 2.14 CONCURRENCY AND ROBUSTNESS VIDEO (09:37)
 
@@ -84,7 +84,7 @@ This activity considers the various errors that can arise with concurrency, and 
 [x] 2.19 WHAT CAN GO WRONG? VIDEO (11:02)
 [x] 2.20 CHECKING YOUR PROGRESS QUIZ
 [x] 2.21 HOT CODE LOADING VIDEO (07:30)
-[~] 2.22 UPGRADING THE FREQUENCY SERVER ARTICLE
+[x] 2.22 UPGRADING THE FREQUENCY SERVER ARTICLE
 [x] 2.23 MAKING CODE ROBUST VIDEO (06:37)
 
 WEEK 3: SCALING IT UP
@@ -109,9 +109,9 @@ In this activity we look at OTP - the Open Telecom Platform that powers most Erl
 
 OTP Master Class
 This activity continues our exploration of OTP, with selected parts of an online OTP Master Class presented by Francesco Cesarini, founder and Technical Director of Erlang Solutions.
-[ ] 3.13 CLIENT-SERVERS VIDEO (09:14)
-[ ] 3.14 WHY OTP? VIDEO (07:37)
-[ ] 3.15 SUPERVISORS VIDEO (05:35)
+[x] 3.13 CLIENT-SERVERS VIDEO (09:14)
+[x] 3.14 WHY OTP? VIDEO (07:37)
+[x] 3.15 SUPERVISORS VIDEO (05:35)
 
 What's next?
 We're now coming to the end of our course in concurrent programming in Erlang. What's next?
